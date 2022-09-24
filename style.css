@@ -13,6 +13,12 @@ input {
     border-radius: 18px;
     margin-bottom: 10px;
     width: 100%;
+    background-color: white;
+}
+
+input:hover {
+    cursor: pointer;
+    border: 2px solid black;
 }
 
 button {
@@ -22,6 +28,11 @@ button {
     height: 55px;
     border-radius: 26px;
     margin: 5px;
+    box-shadow: 5px 5px gray;
+}
+
+button:hover {
+    transform: scale(1.1);
 }
 
 .calculator {
