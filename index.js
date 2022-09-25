@@ -26,7 +26,8 @@ for(item of buttons) {
         }
 
         else if (buttonText == 'CE'){
-            screen.value = screen.value.substr(0, screen.value.length  - 1);
+            screenValue = screen.value.substr(0, screen.value.length  - 1);
+            screen.value = screenValue
         }
 
         else if (buttonText == 'e'){
