@@ -1,41 +1,49 @@
 let screen = document.getElementById('screen');
-buttons = document.querySelectorAll('button');
+buttons = document.getElementsByClassName('calbutton');
+introscreen = document.getElementsByClassName('introbutton');
 
 let screenValue = '';
 
-for(item of buttons) {
+for (item of introscreen) {
+    item.addEventListener('click', (e) => {
+        const intromainpage = document.getElementsByClassName('intropage');
+        intromainpage[0].style.visibility = 'hidden';
+    });
+}
+
+for (item of buttons) {
     item.addEventListener('click', (e) => {
         buttonText = e.target.innerText;
         console.log(`Button text is ${buttonText}`)
 
-        if(buttonText=='X') {
+        if (buttonText == 'X') {
             buttonText = '*';
             screenValue += buttonText;
             screen.value = screenValue
         }
 
-        else if(buttonText=='÷') {
+        else if (buttonText == '÷') {
             buttonText = '/';
             screenValue += buttonText;
             screen.value = screenValue
         }
 
-        else if (buttonText == 'C'){
+        else if (buttonText == 'C') {
             screenValue = "";
             screen.value = screenValue
         }
 
-        else if (buttonText == 'CE'){
-            screenValue = screen.value.substr(0, screen.value.length  - 1);
+        else if (buttonText == 'CE') {
+            screenValue = screen.value.substr(0, screen.value.length - 1);
             screen.value = screenValue
         }
 
-        else if (buttonText == 'e'){
+        else if (buttonText == 'e') {
             screenValue += "2.72";
             screen.value = screenValue;
         }
 
-        else if (buttonText == '√'){
+        else if (buttonText == '√') {
             total = eval(screenValue)
             screenValue = Math.sqrt(total, 2);
             screen.value = screenValue;
@@ -46,25 +54,25 @@ for(item of buttons) {
             screenValue = "";
         }
 
-        else if (buttonText == 'sin'){
+        else if (buttonText == 'sin') {
             total = eval(screenValue)
             screenValue = Math.sin(total);
             screen.value = screenValue;
         }
 
-        else if (buttonText == 'cos'){
+        else if (buttonText == 'cos') {
             total = eval(screenValue)
             screenValue = Math.cos(total);
             screen.value = screenValue;
         }
 
-        else if (buttonText == 'tan'){
+        else if (buttonText == 'tan') {
             total = eval(screenValue)
             screenValue = Math.tan(total);
             screen.value = screenValue;
         }
 
-        else if (buttonText =='log') {
+        else if (buttonText == 'log') {
             total = eval(screenValue)
             screenValue = Math.log(total);
             screen.value = screenValue;
